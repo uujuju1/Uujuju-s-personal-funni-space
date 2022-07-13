@@ -43,6 +43,6 @@ public class FloatGraph {
 		entity.remove();
 	}
 
-	public void set(float amount) {for (GraphBlockBuild build : builds) build.graph.amount = amount;}
+	public void set(float amount) {for (GraphBlockBuild build : builds) build.graph.value = amount;}
 
 }

@@ -2,7 +2,7 @@ package funni.graph;
 
 import mindustry.gen.*;
 
-public class FloatUpdater extends Entityc {
+public class FloatUpdater implements Entityc {
 	public transient FloatGraph graph;
 
 	@Override
