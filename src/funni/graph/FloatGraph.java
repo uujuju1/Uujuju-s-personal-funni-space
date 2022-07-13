@@ -18,7 +18,7 @@ public class FloatGraph {
 		if (with == this) return;
 		
 		for (GraphBlockBuild build : with.builds) {
-			build.module.graph == this;
+			build.module.graph = this;
 			addBuild(build);
 		}
 	}
