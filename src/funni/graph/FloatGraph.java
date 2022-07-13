@@ -4,14 +4,9 @@ import arc.struct.*;
 import funni.graph.GraphBlock.*;
 
 public class FloatGraph {
-	public float id;
-	public static float groupId;
+	public static int blockId;
 
 	public Seq<GraphBlockBuild> builds = new Seq<>(16);
-
-	public FloatGraph() {
-		id = groupId++;
-	}
 
 	public float getId() {return id;}
 
@@ -31,7 +26,7 @@ public class FloatGraph {
 	public void addBuild(GraphBlockBuild build) {
 		if (build == null || build.module == null) return;
 		build.module.graph = this;
-		build.id = build.groupId++;
+		build.id = blockId++;
 		builds.add(build); 
 	}
 

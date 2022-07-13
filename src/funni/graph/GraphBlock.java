@@ -12,7 +12,6 @@ public class GraphBlock extends Block {
 
 	public class GraphBlockBuild extends Building {
 		public int id;
-		public static int groupId;
 		FloatModule module = new FloatModule();
 
 		@Override
