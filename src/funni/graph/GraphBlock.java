@@ -12,12 +12,11 @@ public class GraphBlock extends Block {
 
 	public class GraphBlockBuild extends Building {
 		public int id;
-		FloatModule module = new FloatModule();
+		FloatModule module = new FloatModule(this);
 
 		@Override
 		public void updateTile() {
-			if (module.graph.builds.get(id) != this) module.graph.addBuild(this);
-			module.graph.update();
+			if (module.starter == this) module.graph.update(); 
 			for (int i = 0; i < proximity.size; i++) {
 				if (proximity.get(i) instanceof GraphBlockBuild) {
 					GraphBlockBuild next = (GraphBlockBuild) proximity.get(i);

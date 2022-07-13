@@ -6,8 +6,13 @@ import mindustry.world.modules.*;
 public class FloatModule extends BlockModule {
 
 	public float value = 0;
+	GraphBlockBuild starter;
 
-	public FloatGraph graph = new FloatGraph();
+	public FloatModule(GraphBlockBuild starter) {
+		this.starter = starter;
+	}
+
+	public FloatGraph graph = new FloatGraph(starter);
 
 	@Override
 	public void write(Writes write){
