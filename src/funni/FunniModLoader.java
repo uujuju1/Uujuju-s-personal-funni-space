@@ -1,6 +1,7 @@
 package funni;
 
 import mindustry.mod.*;
+import funni.content.*;
 
 public class FunniModLoader extends Mod{
 
@@ -9,6 +10,7 @@ public class FunniModLoader extends Mod{
 
 	@Override
 	public void loadContent(){
+		new FunniBlocks().load();
 	}
 
 }

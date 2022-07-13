@@ -1,6 +1,7 @@
 package funni.graph;
 
 import arc.struct.*;
+import funni.graph.*;
 
 public class FloatGraph {
 	public float id;
@@ -8,10 +9,10 @@ public class FloatGraph {
 
 	public FloatUpdater entity;
 
-	public Seq<GraphBlockBuild> builds = new Seq<>(false, 16, Building.class);
+	public Seq<GraphBlockBuild> builds = new Seq<>(false, 16, GraphBlockBuild.class);
 
 	public FloatGraph() {
-		entity = FloatUpdater::new;
+		entity = FloatUpdater.create();
 		entity.graph = this;
 		id = groupId++;
 	}

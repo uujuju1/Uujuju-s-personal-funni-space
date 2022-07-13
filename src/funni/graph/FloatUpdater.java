@@ -1,6 +1,6 @@
 package funni.graph;
 
-import mindustry.gen.*;
+import mindustry.entities.comp.*;
 
 public class FloatUpdater extends EntityComp {
 	public transient FloatGraph graph;
