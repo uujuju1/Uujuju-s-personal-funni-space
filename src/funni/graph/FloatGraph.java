@@ -8,8 +8,6 @@ public class FloatGraph {
 
 	public Seq<GraphBlockBuild> builds = new Seq<>(16);
 
-	public float getId() {return id;}
-
 	public void mergeGraph(FloatGraph with) {
 		if (with == this) return;
 		
