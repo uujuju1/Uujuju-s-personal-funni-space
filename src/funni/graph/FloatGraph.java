@@ -1,7 +1,7 @@
 package funni.graph;
 
 import arc.struct.*;
-import funni.graph.*;
+import funni.graph.GraphBlock.*;
 
 public class FloatGraph {
 	public float id;
