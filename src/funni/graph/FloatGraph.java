@@ -1,6 +1,5 @@
 package funni.graph;
 
-import arc.util.*;
 import arc.struct.*;
 import funni.graph.GraphBlock.*;
 
@@ -8,7 +7,7 @@ public class FloatGraph {
 	public static int blockId;
 
 	public GraphBlockBuild starter;
-	public @Nullable Seq<GraphBlockBuild> builds = new Seq<>();
+	public Seq<GraphBlockBuild> builds = new Seq<>();
 
 	public FloatGraph(GraphBlockBuild starter) {
 		this.starter = starter;
@@ -19,12 +18,12 @@ public class FloatGraph {
 		if (with == this) return;
 		
 		for (GraphBlockBuild build : with.builds) {
+			build.module.graph == this;
 			addBuild(build);
 		}
 	}
 
 	public void update() {
-		if (builds == null) return; 
 		set(starter.module.value);
 	}
 
