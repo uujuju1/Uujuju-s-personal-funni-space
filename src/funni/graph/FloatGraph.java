@@ -1,5 +1,6 @@
 package funni.graph;
 
+import arc.util.*;
 import arc.struct.*;
 import funni.graph.GraphBlock.*;
 
