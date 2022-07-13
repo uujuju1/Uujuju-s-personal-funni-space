@@ -7,7 +7,7 @@ public class FloatGraph {
 	public float id;
 	public static float groupId;
 
-	public Seq<GraphBlockBuild> builds = new Seq<>();
+	public Seq<GraphBlockBuild> builds = new Seq<>(16);
 
 	public FloatGraph() {
 		id = groupId++;
@@ -24,12 +24,14 @@ public class FloatGraph {
 	}
 
 	public void update() {
+		if (builds.size = 0) return;
 		set(builds.get(0).graph.value);
 	}
 
 	public void addBuild(GraphBlockBuild build) {
-		if (build == null || build.graph == null) return;
-		build.graph.graph = this;
+		if (build == null || build.module == null) return;
+		build.module.graph = this;
+		build.id = build.groupId++;
 		builds.add(build); 
 	}
 
@@ -37,6 +39,6 @@ public class FloatGraph {
 		builds.clear();
 	}
 
-	public void set(float amount) {for (GraphBlockBuild build : builds) build.graph.value = amount;}
+	public void set(float amount) {for (GraphBlockBuild build : builds) build.module.value = amount;}
 
 }

@@ -11,15 +11,18 @@ public class GraphBlock extends Block {
 	}
 
 	public class GraphBlockBuild extends Building {
-		FloatModule graph = new FloatModule();
+		public float id;
+		public static float groupId;
+		FloatModule module = new FloatModule();
 
 		@Override
 		public void updateTile() {
-			graph.graph.update();
+			if (module.graph.builds.get(id) != this) module.graph.add(this);
+			module.graph.update();
 			for (int i = 0; i < proximity.size; i++) {
 				if (proximity.get(i) instanceof GraphBlockBuild) {
 					GraphBlockBuild next = (GraphBlockBuild) proximity.get(i);
-					if (next.graph.graph != graph.graph) graph.graph.mergeGraph(next.graph.graph);
+					if (next.module.graph != module.graph) module.graph.mergeGraph(next.module.graph);
 				}
 			}
 		}
@@ -27,7 +30,7 @@ public class GraphBlock extends Block {
 		@Override
 		public void draw() {
 			Lines.stroke(3);
-			Lines.lineAngle(x, y, 0, graph.value);
+			Lines.lineAngle(x, y, 0, module.value);
 		}
 	}
 }
