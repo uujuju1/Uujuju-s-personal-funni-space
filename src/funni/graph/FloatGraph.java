@@ -7,7 +7,7 @@ public class FloatGraph {
 	public static int blockId;
 
 	public GraphBlockBuild starter;
-	public Seq<GraphBlockBuild> builds = new Seq<>();
+	public @Nullable Seq<GraphBlockBuild> builds = new Seq<>();
 
 	public FloatGraph(GraphBlockBuild starter) {
 		this.starter = starter;
@@ -23,6 +23,7 @@ public class FloatGraph {
 	}
 
 	public void update() {
+		if (builds == null) return; 
 		set(starter.module.value);
 	}
 

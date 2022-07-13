@@ -16,13 +16,15 @@ public class GraphBlock extends Block {
 
 		@Override
 		public void updateTile() {
-			if (module.starter == this) module.graph.update(); 
-			for (int i = 0; i < proximity.size; i++) {
-				if (proximity.get(i) instanceof GraphBlockBuild) {
-					GraphBlockBuild next = (GraphBlockBuild) proximity.get(i);
-					if (next.module.graph != module.graph) module.graph.mergeGraph(next.module.graph);
+			if (module.graph == null) {
+				if (module.starter == this) module.graph.update(); 
+				for (int i = 0; i < proximity.size; i++) {
+					if (proximity.get(i) instanceof GraphBlockBuild) {
+						GraphBlockBuild next = (GraphBlockBuild) proximity.get(i);
+						if (next.module.graph != module.graph) module.graph.mergeGraph(next.module.graph);
+					}
 				}
-			}
+			}	
 		}
 
 		@Override
