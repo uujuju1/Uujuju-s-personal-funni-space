@@ -17,8 +17,6 @@ public class FloatGraph {
 
 	public void mergeGraph(FloatGraph with) {
 		if (with == this) return;
-
-		with.entity.remove();
 		
 		for (GraphBlockBuild build : with.builds) {
 			addBuild(build);
@@ -31,6 +29,7 @@ public class FloatGraph {
 
 	public void addBuild(GraphBlockBuild build) {
 		if (build == null || build.graph == null) return;
+		build.graph.graph = this;
 		builds.add(build); 
 	}
 
