@@ -12,7 +12,7 @@ public class FloatGraph {
 	public Seq<GraphBlockBuild> builds = new Seq<>(false, 16, GraphBlockBuild.class);
 
 	public FloatGraph() {
-		entity = FloatUpdater.create();
+		entity = FloatUpdater.add();
 		entity.graph = this;
 		id = groupId++;
 	}
