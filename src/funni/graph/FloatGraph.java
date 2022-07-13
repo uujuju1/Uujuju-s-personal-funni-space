@@ -8,7 +8,7 @@ public class FloatGraph {
 
 	public FloatUpdater entity;
 
-	public Seq<GraphBlockBuild> builds = new Seq<>(false, 16 Building.class);
+	public Seq<GraphBlockBuild> builds = new Seq<>(false, 16, Building.class);
 
 	public FloatGraph() {
 		entity = FloatUpdater::new;

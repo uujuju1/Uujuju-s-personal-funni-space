@@ -1,4 +1,4 @@
-package funni.graph.*;
+package funni.graph;
 
 import arc.util.io.*;
 import mindustry.world.modules.*;
