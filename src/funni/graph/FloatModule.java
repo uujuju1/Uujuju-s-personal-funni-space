@@ -2,6 +2,7 @@ package funni.graph;
 
 import arc.util.io.*;
 import mindustry.world.modules.*;
+import funni.graph.GraphBlock.*;
 
 public class FloatModule extends BlockModule {
 
