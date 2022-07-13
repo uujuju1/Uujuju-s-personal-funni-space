@@ -7,13 +7,9 @@ public class FloatGraph {
 	public float id;
 	public static float groupId;
 
-	public FloatUpdater entity;
-
 	public Seq<GraphBlockBuild> builds = new Seq<>(false, 16, GraphBlockBuild.class);
 
 	public FloatGraph() {
-		entity = FloatUpdater.add();
-		entity.graph = this;
 		id = groupId++;
 	}
 
@@ -40,7 +36,6 @@ public class FloatGraph {
 
 	public void clear() {
 		builds.clear();
-		entity.remove();
 	}
 
 	public void set(float amount) {for (GraphBlockBuild build : builds) build.graph.value = amount;}

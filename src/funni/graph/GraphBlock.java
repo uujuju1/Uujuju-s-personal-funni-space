@@ -15,6 +15,7 @@ public class GraphBlock extends Block {
 
 		@Override
 		public void updateTile() {
+			graph.graph.update();
 			for (int i = 0; i < proximity.size; i++) {
 				if (proximity.get(i) instanceof GraphBlockBuild) {
 					GraphBlockBuild next = (GraphBlockBuild) proximity.get(i);
