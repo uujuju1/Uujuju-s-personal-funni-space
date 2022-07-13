@@ -7,7 +7,7 @@ public class FloatGraph {
 	public float id;
 	public static float groupId;
 
-	public Seq<GraphBlockBuild> builds = new Seq<>(false, 16, GraphBlockBuild.class);
+	public Seq<GraphBlockBuild> builds = new Seq<>();
 
 	public FloatGraph() {
 		id = groupId++;
