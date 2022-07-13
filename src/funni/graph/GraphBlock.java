@@ -12,7 +12,7 @@ public class GraphBlock extends Block {
 
 	public class GraphBlockBuild extends Building {
 		public int id;
-		FloatModule module = new FloatModule(this);
+		public FloatModule module = new FloatModule(this);
 
 		@Override
 		public void updateTile() {
