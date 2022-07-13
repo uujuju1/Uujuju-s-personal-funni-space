@@ -24,8 +24,8 @@ public class FloatGraph {
 	}
 
 	public void update() {
-		if (builds.size = 0) return;
-		set(builds.get(0).graph.value);
+		if (builds.size == 0) return;
+		set(builds.get(0).module.value);
 	}
 
 	public void addBuild(GraphBlockBuild build) {
