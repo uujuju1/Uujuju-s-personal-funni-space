@@ -11,16 +11,16 @@ public class GraphModule extends BlockModule {
 	public GraphBlockBuild starter;
 	public Seq<GraphBlockBuild> builds = new Seq<>(16);
 
-	public FloatModule(GraphBlockBuild starter) {
+	public GraphModule(GraphBlockBuild starter) {
 		this.starter = starter;
 		graph = new FloatGraph(starter);
 		addBlock(starter);
 	}
 
-	public void addBlock(GraphBlockBuild new) {
-		new.module = this;
-		new.id = blockId++;
-		builds.add(new);
+	public void addBlock(GraphBlockBuild newer) {
+		newer.module = this;
+		newer.id = blockId++;
+		builds.add(newer);
 	}
 
 	@Override
