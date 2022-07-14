@@ -6,7 +6,7 @@ import mindustry.world.modules.*;
 import funni.graph.GraphBlock.*;
 
 public class GraphModule extends BlockModule {
-	public static int blockId;
+	public int blockId;
 
 	public float value = 0;
 	public GraphBlockBuild starter;
@@ -28,9 +28,11 @@ public class GraphModule extends BlockModule {
 	}
 	public void updateId() {
 		builds.each(build -> {
-			int id;
-			id++;
-			build.id = id - 1;
+			for (int i = 0; i < builds.size; i++) {
+				if (builds.get(i) == build) {
+					build.id = i;
+				}
+			}
 		});
 		blockId = builds.size;
 	}
