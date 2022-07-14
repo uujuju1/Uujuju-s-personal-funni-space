@@ -1,5 +1,6 @@
 package funni.graph;
 
+import arc.struct.*;
 import arc.util.io.*;
 import mindustry.world.modules.*;
 import funni.graph.GraphBlock.*;
@@ -13,7 +14,6 @@ public class GraphModule extends BlockModule {
 
 	public GraphModule(GraphBlockBuild starter) {
 		this.starter = starter;
-		graph = new FloatGraph(starter);
 		addBlock(starter);
 	}
 
@@ -21,6 +21,14 @@ public class GraphModule extends BlockModule {
 		newer.module = this;
 		newer.id = blockId++;
 		builds.add(newer);
+	}
+
+	public void update() {
+		for(GraphBlockBuild build : builds) {
+			if (build != builds.get(0)) {
+				build.setValue(starter.module.value);
+			}
+		}
 	}
 
 	@Override
