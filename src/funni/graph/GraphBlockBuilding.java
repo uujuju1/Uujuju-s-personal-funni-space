@@ -7,5 +7,5 @@ public interface GraphBlockBuilding {
 		getGraph().value = amount;
 	} 
 
-	default float getValue() {return getGraph().value}
+	default float getValue() {return getGraph().value;}
 }
