@@ -1,9 +1,9 @@
 package funni.graph;
 
-public class GraphBlockBuilding {
-	public GraphModule getGraph() {return null;}
+public interface GraphBlockBuilding {
+	default GraphModule getGraph() {return null;}
 
-	public void setValue(float amount) {
+	default void setValue(float amount) {
 		getGraph().value = amount;
 	} 
 }
