@@ -24,7 +24,7 @@ public class GraphModule extends BlockModule {
 	}
 
 	public void update() {
-		builds.each(build -> if (build != builds.get(0)) builds.setValue(starter.getGraph().value));
+		builds.each(build -> {if (build != builds.get(0)) builds.setValue(starter.getGraph().value);});
 	}
 	public void updateId() {
 		int id;
