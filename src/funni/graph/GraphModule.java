@@ -4,14 +4,23 @@ import arc.util.io.*;
 import mindustry.world.modules.*;
 import funni.graph.GraphBlock.*;
 
-public class FloatModule extends BlockModule {
+public class GraphModule extends BlockModule {
+	public static int blockId;
+
 	public float value = 0;
 	public GraphBlockBuild starter;
-	public FloatGraph graph;
+	public Seq<GraphBlockBuild> builds = new Seq<>(16);
 
 	public FloatModule(GraphBlockBuild starter) {
 		this.starter = starter;
 		graph = new FloatGraph(starter);
+		addBlock(starter);
+	}
+
+	public void addBlock(GraphBlockBuild new) {
+		new.module = this;
+		new.id = blockId++;
+		builds.add(new);
 	}
 
 	@Override

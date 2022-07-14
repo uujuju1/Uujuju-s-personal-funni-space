@@ -10,19 +10,26 @@ public class GraphBlock extends Block {
 		update = true;
 	}
 
-	public class GraphBlockBuild extends Building {
+	public class GraphBlockBuild extends Building implements GraphBlockBuilding {
 		public int id;
-		public FloatModule module = new FloatModule(this);
+		public GraphModule module = new GraphModule(this);
+
+		public GraphModule getGraph() {return module;}
 
 		@Override
 		public void updateTile() {
-			if (module.starter == this) module.graph.update(); 
+			if (module.starter == this) module.update(); 
 			for (int i = 0; i < proximity.size; i++) {
 				if (proximity.get(i) instanceof GraphBlockBuild) {
 					GraphBlockBuild next = (GraphBlockBuild) proximity.get(i);
-					if (next.module.graph != module.graph) module.graph.mergeGraph(next.module.graph);
+					if (next.module != module) module.addBlock(next);
 				}
 			}
+		}
+
+		@Override
+		public void onRemoved() {
+			module.builds.remove(id);
 		}
 
 		@Override
