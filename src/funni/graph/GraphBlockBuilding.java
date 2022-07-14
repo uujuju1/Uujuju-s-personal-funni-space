@@ -6,4 +6,6 @@ public interface GraphBlockBuilding {
 	default void setValue(float amount) {
 		getGraph().value = amount;
 	} 
+
+	default float getValue() {return getGraph().value}
 }

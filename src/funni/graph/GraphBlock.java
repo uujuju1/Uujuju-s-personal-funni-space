@@ -36,7 +36,7 @@ public class GraphBlock extends Block {
 		@Override
 		public void draw() {
 			Lines.stroke(3);
-			Lines.lineAngle(x, y, 0, module.value);
+			Lines.lineAngle(x, y, getValue() * 5, 3);
 		}
 	}
 }
