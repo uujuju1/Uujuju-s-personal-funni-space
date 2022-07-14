@@ -6,8 +6,8 @@ import funni.graph.GraphBlock.*;
 
 public class FloatModule extends BlockModule {
 	public float value = 0;
+	public GraphBlockBuild starter;
 	public FloatGraph graph = new FloatGraph(starter);
-	GraphBlockBuild starter;
 
 	public FloatModule(GraphBlockBuild starter) {
 		this.starter = starter;
