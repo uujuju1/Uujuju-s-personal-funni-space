@@ -29,8 +29,8 @@ public class GraphModule extends BlockModule {
 	public void updateId() {
 		builds.each(build -> {
 			int id;
-			build.id = id;
 			id++;
+			build.id = id - 1;
 		});
 		blockId = builds.size;
 	}
