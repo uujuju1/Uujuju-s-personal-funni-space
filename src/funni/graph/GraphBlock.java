@@ -30,6 +30,7 @@ public class GraphBlock extends Block {
 		@Override
 		public void onRemoved() {
 			module.builds.remove(id);
+			module.updateId();
 		}
 
 		@Override

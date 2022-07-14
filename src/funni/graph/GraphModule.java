@@ -24,11 +24,15 @@ public class GraphModule extends BlockModule {
 	}
 
 	public void update() {
-		for(GraphBlockBuild build : builds) {
-			if (build != builds.get(0)) {
-				build.setValue(starter.module.value);
-			}
-		}
+		builds.each(build -> if (build != builds.get(0)) builds.setValue(starter.getGraph().value));
+	}
+	public void updateId() {
+		int id;
+		builds.each(build -> {
+			build.id = id;
+			id++;
+		});
+		blockId = builds.size;
 	}
 
 	@Override
