@@ -36,8 +36,8 @@ public class RotationConveyor extends GraphBlock {
 				next = (GraphBlockBuild) front();
 				if (next.module != module) module.addBlock(next);
 			}
-			if (front() instanceof GraphBlockBuild) {
-				next = (GraphBlockBuild) front();
+			if (back() instanceof GraphBlockBuild) {
+				next = (GraphBlockBuild) back();
 				if (next.module != module) module.addBlock(next);
 			}
 		}

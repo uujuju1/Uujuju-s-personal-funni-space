@@ -40,6 +40,7 @@ public class GraphModule extends BlockModule {
 			}
 		});
 		blockId = builds.size;
+		starter = builds.get(0);
 	}
 
 	@Override
