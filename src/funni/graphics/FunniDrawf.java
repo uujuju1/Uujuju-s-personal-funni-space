@@ -30,7 +30,7 @@ public class FunniDrawf {
 			cos1 = Mathf.map(cos1, -1, 1, y - height / 2, y + height / 2);
 			cos2 = Mathf.map(cos2, -1, 1, y - height / 2, y + height / 2);
 
-			Draw.rect(regions[i], x, (cos1 + cos2) * 0.5, width, cos2 - cos1, width * 0.5, y - cos1, rot);
+			Draw.rect(regions[i], x, (cos1 + cos2) * 0.5f, width, cos2 - cos1, width * 0.5f, y - cos1, rot);
 		}
 	}
 }

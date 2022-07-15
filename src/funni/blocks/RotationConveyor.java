@@ -3,6 +3,7 @@ package funni.blocks;
 import arc.*;
 import arc.graphics.g2d.*;
 import funni.graph.*;
+import funni.graphics.*;
 
 public class RotationConveyor extends GraphBlock {
 	public TextureRegion[] rotatorRegions;
@@ -21,7 +22,7 @@ public class RotationConveyor extends GraphBlock {
 		baseRegion = Core.atlas.find(name + "-base");
 		topRegion = Core.atlas.find(name + "-top");
 		for (int i = 0; i < rotatorSides; i++) {
-			rotatorRegions = Core.atlas.find(name + "-rotator" + i);
+			rotatorRegions[i] = Core.atlas.find(name + "-rotator" + i);
 		}
 		rotatorShadowRegion = Core.atlas.find(name + "-rotator-shadow");
 	}
