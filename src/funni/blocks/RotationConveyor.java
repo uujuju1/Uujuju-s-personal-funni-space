@@ -6,7 +6,7 @@ import funni.graph.*;
 import funni.graphics.*;
 
 public class RotationConveyor extends GraphBlock {
-	public TextureRegion[] rotatorRegions = new TextureRegion[rotatorSides];
+	public TextureRegion[] rotatorRegions;
 	public int rotatorSides = 3;
 	public TextureRegion baseRegion, topRegion, rotatorShadowRegion;
 
@@ -19,6 +19,7 @@ public class RotationConveyor extends GraphBlock {
 	@Override
 	public void load() {
 		super.load();
+		rotatorRegions = new TextureRegion[rotatorSides]
 		baseRegion = Core.atlas.find(name + "-base");
 		topRegion = Core.atlas.find(name + "-top");
 		for (int i = 0; i < rotatorSides; i++) {
