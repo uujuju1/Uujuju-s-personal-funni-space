@@ -3,6 +3,7 @@ package funni.content;
 import mindustry.world.*;
 import mindustry.world.meta.*;
 import funni.graph.*;
+import funni.blocks.*;
 
 public class FunniBlocks {
 	public static Block test;
