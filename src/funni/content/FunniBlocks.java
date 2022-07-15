@@ -7,7 +7,7 @@ import funni.graph.*;
 public class FunniBlocks {
 	public static Block test;
 	public void load() {
-		test = new GraphBlock("test") {{
+		test = new RotationConveyor("rotation-conveyor") {{
 			buildVisibility = BuildVisibility.shown;
 			size = 1;
 			destructible = true;

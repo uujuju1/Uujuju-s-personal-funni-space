@@ -1,5 +1,5 @@
 package funni.graph;
-
+// quality of life building
 public interface GraphBlockBuilding {
 	default GraphModule getGraph() {return null;}
 
@@ -8,4 +8,6 @@ public interface GraphBlockBuilding {
 	} 
 
 	default float getValue() {return getGraph().value;}
+
+	default float getfixedRot() {return 0f}
 }

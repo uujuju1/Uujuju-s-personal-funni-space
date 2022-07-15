@@ -16,15 +16,21 @@ public class GraphBlock extends Block {
 
 		public GraphModule getGraph() {return module;}
 
-		@Override
-		public void updateTile() {
-			if (module.starter == this) module.update(); 
+		public float getFixedRot() {return (rotdeg() + 90f) % 180f - 90f;}
+
+		public void addBuilds() {
 			for (int i = 0; i < proximity.size; i++) {
 				if (proximity.get(i) instanceof GraphBlockBuild) {
 					GraphBlockBuild next = (GraphBlockBuild) proximity.get(i);
 					if (next.module != module) module.addBlock(next);
 				}
 			}
+		}
+
+		@Override
+		public void updateTile() {
+			if (module.starter == this) module.update(); 
+			addBuilds();
 		}
 
 		@Override

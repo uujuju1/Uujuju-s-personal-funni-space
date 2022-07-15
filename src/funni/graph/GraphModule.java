@@ -1,5 +1,6 @@
 package funni.graph;
 
+import arc.util.*;
 import arc.struct.*;
 import arc.util.io.*;
 import mindustry.world.modules.*;
@@ -8,12 +9,15 @@ import funni.graph.GraphBlock.*;
 public class GraphModule extends BlockModule {
 	public int blockId;
 
-	public float value = 0;
+	public float 
+	value = 0,
+	rotationDelta;	
 	public GraphBlockBuild starter;
 	public Seq<GraphBlockBuild> builds = new Seq<>(16);
 
 	public GraphModule(GraphBlockBuild starter) {
 		this.starter = starter;
+		rotationDelta = 0;
 		addBlock(starter);
 	}
 
@@ -25,6 +29,7 @@ public class GraphModule extends BlockModule {
 
 	public void update() {
 		builds.each(build -> {if (build != builds.get(0)) build.setValue(starter.getGraph().value);});
+		rotationDelta += value * Time.delta;
 	}
 	public void updateId() {
 		builds.each(build -> {
