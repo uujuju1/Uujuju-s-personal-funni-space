@@ -1,5 +1,7 @@
 package funni.blocks;
 
+import arc.*;
+import arc.graphics.g2d.*;
 import funni.graph.*;
 
 public class RotationConveyor extends GraphBlock {
@@ -7,7 +9,7 @@ public class RotationConveyor extends GraphBlock {
 	public int rotatorSides = 3;
 	public TextureRegion baseRegion, topRegion, rotatorShadowRegion;
 
-	public TorqueConveyor(String name) {
+	public RotationConveyor(String name) {
 		super(name);
 		rotate = true;
 		solid = true;

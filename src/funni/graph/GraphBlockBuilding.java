@@ -9,5 +9,5 @@ public interface GraphBlockBuilding {
 
 	default float getValue() {return getGraph().value;}
 
-	default float getfixedRot() {return 0f}
+	default float getfixedRot() {return 0f;}
 }

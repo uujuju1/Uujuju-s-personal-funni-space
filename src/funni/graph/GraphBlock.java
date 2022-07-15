@@ -14,8 +14,10 @@ public class GraphBlock extends Block {
 		public int id;
 		public GraphModule module = new GraphModule(this);
 
+		@Override
 		public GraphModule getGraph() {return module;}
 
+		@Override
 		public float getFixedRot() {return (rotdeg() + 90f) % 180f - 90f;}
 
 		public void addBuilds() {
