@@ -6,7 +6,7 @@ import funni.graph.*;
 import funni.graphics.*;
 
 public class RotationConveyor extends GraphBlock {
-	public TextureRegion[] rotatorRegions;
+	public TextureRegion[] rotatorRegions = new TextureRegion[rotatorSides];
 	public int rotatorSides = 3;
 	public TextureRegion baseRegion, topRegion, rotatorShadowRegion;
 
