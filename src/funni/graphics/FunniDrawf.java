@@ -13,7 +13,7 @@ public class FunniDrawf {
 			angle1 = Mathf.mod(rRot + (360f/sides * i), 360),
 			angle2 = Mathf.mod(rRot + (360f/sides) + (360f/sides * i), 360);
 
-			if (angle1 >= 180f && angle2 >= 180f) return;
+			if (!(angle1 >= 180f && angle2 >= 180f)) return;
 			float
 			cos1 = -Mathf.cos(angle1 * Mathf.degreesToRadians),
 			cos2 = -Mathf.cos(angle1 * Mathf.degreesToRadians);
