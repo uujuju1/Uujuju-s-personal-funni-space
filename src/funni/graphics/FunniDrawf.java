@@ -5,21 +5,23 @@ import arc.math.*;
 import arc.graphics.g2d.*;
 
 public class FunniDrawf {
-	// textured square
+	// textured polygon
 	// very much based from pu
 	public static void rotatingRects(TextureRegion[] regions, int sides, float x, float y, float width, float height, float rot, float rRot) {
 		for (int i = 0; i < sides; i++) {
 			float
-			angle1 = Mathf.mod(rRot + (360f/sides * i), 360),
-			angle2 = Mathf.mod(rRot + (360f/sides) + (360f/sides * i), 360);
+			angle1 = rRot + (360f/sides * i),
+			angle2 = rRot + (360f/sides) + (360f/sides * i),
+			mod1 = Mathf.mod(angle1, 360),
+			mod2 = Mathf.mod(angle2, 360);
 
-			if (!(angle1 <= 180f && angle2 <= 180f)) return;
+			if (mod1 >= 180f && mod2 >= 180f) return;
 			float
 			cos1 = -Mathf.cos(angle1 * Mathf.degreesToRadians),
-			cos2 = -Mathf.cos(angle1 * Mathf.degreesToRadians);
-			if (angle1 > 180f) {
+			cos2 = -Mathf.cos(angle2 * Mathf.degreesToRadians);
+			if (mod1 > 180f) {
 				cos1 = -1;
-			} else if (angle2 > 180f) {
+			} else if (mod2 > 180f) {
 				cos2 = 1;
 			}
 			cos1 = Mathf.map(cos1, -1f, 1f, y - height / 2f, y + height / 2f);
