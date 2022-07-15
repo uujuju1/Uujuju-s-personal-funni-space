@@ -19,7 +19,7 @@ public class RotationConveyor extends GraphBlock {
 	@Override
 	public void load() {
 		super.load();
-		rotatorRegions = new TextureRegion[rotatorSides]
+		rotatorRegions = new TextureRegion[rotatorSides];
 		baseRegion = Core.atlas.find(name + "-base");
 		topRegion = Core.atlas.find(name + "-top");
 		for (int i = 0; i < rotatorSides; i++) {
