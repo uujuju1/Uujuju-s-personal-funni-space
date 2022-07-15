@@ -31,10 +31,14 @@ public class RotationConveyor extends GraphBlock {
 		@Override
 		public void addBuilds() {
 			GraphBlockBuild next;
-			if (front() instanceof GraphBlockBuild) next = (GraphBlockBuild) front();
-			if (next.module != module) module.addBlock(next);
-			if (front() instanceof GraphBlockBuild) next = (GraphBlockBuild) front();
-			if (next.module != module) module.addBlock(next);
+			if (front() instanceof GraphBlockBuild) {
+				next = (GraphBlockBuild) front();
+				if (next.module != module) module.addBlock(next);
+			}
+			if (front() instanceof GraphBlockBuild) {
+				next = (GraphBlockBuild) front();
+				if (next.module != module) module.addBlock(next);
+			}
 		}
 
 		@Override
