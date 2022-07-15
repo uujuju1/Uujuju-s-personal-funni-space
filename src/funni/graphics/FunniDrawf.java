@@ -7,7 +7,7 @@ import arc.graphics.g2d.*;
 public class FunniDrawf {
 	// textured square
 	// very much based from pu
-	public void rotatingRects(TextureRegion[] regions, int sides, float x, float y, float width, float height, float rot, float rRot) {
+	public static void rotatingRects(TextureRegion[] regions, int sides, float x, float y, float width, float height, float rot, float rRot) {
 		for (int i = 0; i < sides; i++) {
 			if ((regions[i] instanceof TextureRegion)) {
 				regions[i] = Core.atlas.find("error");
